@@ -1,0 +1,2 @@
+# Overwrite global rules to add source files
+!*.pyc
