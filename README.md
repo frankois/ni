@@ -7,9 +7,9 @@ This can be used to add functionnalities, debug or just for learning purpose.
 So far, the following scripts have been released:
 
 - [x] KK MK1
-- [ ] Maschine Mikro MK2 
-- [ ] Maschine MK2
-- [ ] Maschine Studio
+- [x] Maschine Mikro MK2 
+- [x] Maschine MK2
+- [x] Maschine Studio
 - [x] Maschine JAM
 - [ ] Maschine MK3
 
@@ -23,21 +23,41 @@ So far, the following scripts have been released:
 │       ├── scripts
 │       └── src
 └── maschine
-    └── jam
+    ├── maschine_jam
+    │   ├── scripts
+    │   └── src
+    ├── maschine_mikro_mk2
+    │   ├── scripts
+    │   └── src
+    ├── maschine_mk2
+    │   ├── scripts
+    │   └── src
+    └── maschine_studio
         ├── scripts
         └── src
 ```
 
 ## Errors
 
-Here are listed the files that had issues during the process.
+Here are listed the files that had issues during the process. This could maybe be fixed by trying other libraries.
 
-### KK mk1
+### KK MK1
 
 Everything went well :ok_hand:
 
 ### Maschine JAM
 
-The following files had issues. Should try with different libraries:
 - `EncoderComponent.py`
 - `JamModes.py`
+
+### Maschine Mikro MK2
+
+- `EditSection.pyc`
+
+### Maschine Studio
+
+- `EditSection.pyc`
+
+### Maschine MK2
+
+- `EditSection.pyc`
