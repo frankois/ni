@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/SceneButtonComponent.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 9309 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 9265 bytes
 from _Framework.SubjectSlot import subject_slot
 import _Framework.CompoundComponent as CompoundComponent
 from _Framework.InputControlElement import MIDI_NOTE_TYPE
@@ -30,7 +30,7 @@ class SceneButtonComponent(CompoundComponent):
     _SceneButtonComponent__page_select = False
 
     def __init__(self, session, *a, **k):
-        (super(SceneButtonComponent, self).__init__)(*a, **k)
+        (super().__init__)(*a, **k)
         self._buttons = [self.create_encoders(index) for index in range(8)]
         self._bmatrix = IndexButtonMatrix(0, name='Scene_Launch_Button_Matrix')
         self._bmatrix.add_row(tuple(self._buttons))
@@ -103,7 +103,7 @@ class SceneButtonComponent(CompoundComponent):
 
     def notify_position(self, position, quantize, grid_elements=8):
         clip = self.song().view.detail_clip
-        if clip == None:
+        if clip is None:
             return
         page_pos = int(position / quantize / grid_elements) - self._SceneButtonComponent__page_offset * 8
         if self._SceneButtonComponent__page_select:
@@ -200,12 +200,12 @@ class SceneButtonComponent(CompoundComponent):
 
     def _page_action(self, button):
         if self._SceneButtonComponent__page_select:
-            if button.page_off != None and button.page_off != self._SceneButtonComponent__page_offset:
+            if button.page_off is not None and button.page_off != self._SceneButtonComponent__page_offset:
                 self._SceneButtonComponent__page_offset = button.page_off
                 self._SceneButtonComponent__page_control.select_pos(self._SceneButtonComponent__page_offset * 8)
                 self._assign_button()
         elif self._SceneButtonComponent__page_control:
-            if button.page != None:
+            if button.page is not None:
                 modifiers = self._SceneButtonComponent__modifier.modifier_mask()
                 if modifiers & MASK_CLEAR:
                     self._SceneButtonComponent__page_control.clear_clip(modifiers & MASK_SHIFT != 0)
@@ -252,7 +252,7 @@ class SceneButtonComponent(CompoundComponent):
                     song.duplicate_scene(sindex)
 
     def disconnect(self):
-        super(SceneButtonComponent, self).disconnect()
+        super().disconnect()
         for button in self._buttons:
             button.unlight()
-# okay decompiling scripts/SceneButtonComponent.pyc
+# okay decompiling src/SceneButtonComponent.pyc

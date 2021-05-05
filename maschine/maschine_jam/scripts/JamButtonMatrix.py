@@ -3,15 +3,15 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/JamButtonMatrix.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 7440 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 7331 bytes
 import _Framework.ButtonMatrixElement as ButtonMatrixElement
 from _Framework.Util import in_range
 
 class JamButtonMatrix(ButtonMatrixElement):
 
     def __init__(self, index_offset, rows=[], *a, **k):
-        (super(JamButtonMatrix, self).__init__)(*a, **k)
+        (super().__init__)(*a, **k)
         self._grabbed = False
         self._JamButtonMatrix__index_offset = index_offset
         self._listern_stack = None
@@ -34,7 +34,7 @@ class JamButtonMatrix(ButtonMatrixElement):
 
     def switch_to_user_action(self):
         if self._value_listener_action:
-            super(JamButtonMatrix, self).add_value_listener(self._value_listener_action)
+            super().add_value_listener(self._value_listener_action)
             self._grabbed = True
         else:
             self._grabbed = True
@@ -61,7 +61,7 @@ class JamButtonMatrix(ButtonMatrixElement):
                 button.enable_cc_midi()
 
     def remove_value_listener(self, *a, **k):
-        (super(JamButtonMatrix, self).remove_value_listener)(*a, **k)
+        (super().remove_value_listener)(*a, **k)
         if self._external_unbind_lister:
             self._external_unbind_lister.handle_user_mode_removed()
 
@@ -104,7 +104,7 @@ class JamButtonMatrix(ButtonMatrixElement):
 class IndexButtonMatrix(ButtonMatrixElement):
 
     def __init__(self, index_offset, rows=[], *a, **k):
-        (super(IndexButtonMatrix, self).__init__)(*a, **k)
+        (super().__init__)(*a, **k)
         self._IndexButtonMatrix__grabbed = False
         self._IndexButtonMatrix__batch_updater = None
         self._IndexButtonMatrix__index_offset = index_offset
@@ -148,7 +148,7 @@ class IndexButtonMatrix(ButtonMatrixElement):
                 button.send_color(data[idx], True)
 
     def remove_value_listener(self, *a, **k):
-        (super(IndexButtonMatrix, self).remove_value_listener)(*a, **k)
+        (super().remove_value_listener)(*a, **k)
         if self._IndexButtonMatrix__grabbed:
             self.resource.release_all()
 
@@ -234,4 +234,4 @@ class MatrixState:
 
     def send_update(self):
         self._MatrixState__parent._send_midi(tuple(self._MatrixState__cfg_msg))
-# okay decompiling scripts/JamButtonMatrix.pyc
+# okay decompiling src/JamButtonMatrix.pyc

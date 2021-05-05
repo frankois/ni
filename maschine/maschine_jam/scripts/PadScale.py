@@ -3,7 +3,7 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/PadScale.py
-# Compiled at: 2021-04-29 13:54:08
+# Compiled at: 2021-05-04 10:35:59
 # Size of source mod 2**32: 3184 bytes
 BASE_NOTE_FIX_COLOR = 71
 
@@ -104,4 +104,4 @@ class PadScale:
         if relvalue < 0.0:
             return 0.0
         return relvalue
-# okay decompiling scripts/PadScale.pyc
+# okay decompiling src/PadScale.pyc

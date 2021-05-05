@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/StateButton.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 4537 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 4449 bytes
 import _Framework.ButtonElement as ButtonElement
 from _Framework.InputControlElement import MIDI_CC_TYPE
 
@@ -45,7 +45,7 @@ class StateButton(ButtonElement):
         self._is_enabled = enabled
 
     def send_value(self, value, force=False, channel=None):
-        super(StateButton, self).send_value(value, True)
+        super().send_value(value, True)
 
     def reset(self):
         self._last_value = 0
@@ -67,7 +67,7 @@ class StateButton(ButtonElement):
             self.send_value(self._StateButton__buffered_value, True)
 
     def remove_value_listener(self, *a, **k):
-        (super(self.__class__, self).remove_value_listener)(*a, **k)
+        (super().remove_value_listener)(*a, **k)
         if self.grabbed:
             self.resource.release_all()
 
@@ -124,15 +124,15 @@ class TouchButton(ButtonElement):
     def grab_control(self, client):
         self._TouchButton__grabbed = True
         if self._TouchButton__main_listener:
-            super(TouchButton, self).remove_value_listener(self._TouchButton__main_listener)
+            super().remove_value_listener(self._TouchButton__main_listener)
 
     def release_control(self, client):
         self._TouchButton__grabbed = False
         if self._TouchButton__main_listener:
-            super(TouchButton, self).add_value_listener(self._TouchButton__main_listener)
+            super().add_value_listener(self._TouchButton__main_listener)
 
     def add_value_listener(self, *a, **k):
         if not self._TouchButton__main_listener:
             self._TouchButton__main_listener = a[0]
-        (super(TouchButton, self).add_value_listener)(*a, **k)
-# okay decompiling scripts/StateButton.pyc
+        (super().add_value_listener)(*a, **k)
+# okay decompiling src/StateButton.pyc

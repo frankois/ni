@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/StepMode.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 20584 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 20570 bytes
 import Live
 from _Framework.SubjectSlot import subject_slot
 from _Framework.InputControlElement import MIDI_NOTE_ON_STATUS, MIDI_NOTE_OFF_STATUS
@@ -120,7 +120,7 @@ class GridElement:
 class StepMode(MaschineMode):
 
     def __init__(self, button_index, padmode, monochrome=False, *a, **k):
-        (super(StepMode, self).__init__)(button_index, *a, **k)
+        (super().__init__)(button_index, *a, **k)
         assert isinstance(padmode, PadMode)
         self._padmode = padmode
         self._mono_mode = False
@@ -501,4 +501,4 @@ class StepMode(MaschineMode):
         for row in self._grid:
             for cell in row:
                 cell.release()
-# okay decompiling scripts/StepMode.pyc
+# okay decompiling src/StepMode.pyc

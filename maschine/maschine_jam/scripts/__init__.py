@@ -3,7 +3,7 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/__init__.py
-# Compiled at: 2021-04-29 13:54:08
+# Compiled at: 2021-05-04 10:35:59
 # Size of source mod 2**32: 504 bytes
 from .MaschineJam import MaschineJam
 from _Framework.Capabilities import *
@@ -22,4 +22,4 @@ def get_capabilities():
                  inport(props=[]),
                  outport(props=[HIDDEN, NOTES_CC, SYNC, SCRIPT]),
                  outport(props=[])]}
-# okay decompiling scripts/__init__.pyc
+# okay decompiling src/__init__.pyc

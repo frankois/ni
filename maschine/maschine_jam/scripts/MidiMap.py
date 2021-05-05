@@ -3,7 +3,7 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/MidiMap.py
-# Compiled at: 2021-04-29 14:09:06
+# Compiled at: 2021-05-04 10:35:59
 # Size of source mod 2**32: 14040 bytes
 import Live, re
 from .PadScale import PadScale, BASE_NOTE_FIX_COLOR
@@ -438,4 +438,4 @@ def device_get_mode_color(mode, ind):
     if mode == CONTROL_DEVICE:
         return PColor.MIX_MODE_DEVICE[ind]
     return
-# okay decompiling scripts/MidiMap.pyc
+# okay decompiling src/MidiMap.pyc

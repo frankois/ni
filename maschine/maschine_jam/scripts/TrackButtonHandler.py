@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/TrackButtonHandler.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 10800 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 10776 bytes
 from _Framework.SubjectSlot import subject_slot
 import _Framework.CompoundComponent as CompoundComponent
 from .MidiMap import toHSB
@@ -63,7 +63,7 @@ def solo_exclusive(song, track):
 class TrackButtonHandler(CompoundComponent):
 
     def __init__(self, index, button, track_editor, *a, **k):
-        (super(TrackButtonHandler, self).__init__)(*a, **k)
+        (super().__init__)(*a, **k)
         assert isinstance(button, IndexedButton)
         self._index = index
         self._handle_button_value.subject = button
@@ -350,4 +350,4 @@ class TrackButtonHandler(CompoundComponent):
         self._handle_value_changed.subject = parameter
         self._parameter = parameter
         self._button.send_value(self._parameter_to_value())
-# okay decompiling scripts/TrackButtonHandler.pyc
+# okay decompiling src/TrackButtonHandler.pyc

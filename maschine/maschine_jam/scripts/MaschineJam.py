@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/MaschineJam.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 16005 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 15971 bytes
 import Live, time
 from _Framework.SubjectSlot import subject_slot
 import _Framework.ControlSurface as ControlSurface
@@ -32,7 +32,7 @@ class MaschineJam(ControlSurface):
     _MaschineJam__matrix_state = None
 
     def __init__(self, c_instance):
-        super(MaschineJam, self).__init__(c_instance)
+        super().__init__(c_instance)
         with self.component_guard():
             self._suppress_send_midi = True
             register_sender(self)
@@ -256,7 +256,7 @@ class MaschineJam(ControlSurface):
 
     def invoke_rec(self):
         slot = self.song().view.highlighted_clip_slot
-        if slot == None:
+        if slot is None:
             return
         if slot.controls_other_clips:
             slot.fire()
@@ -408,5 +408,5 @@ class MaschineJam(ControlSurface):
         self._channel_led_right.send_value(0, True)
         self._active = False
         self._suppress_send_midi = True
-        super(MaschineJam, self).disconnect()
-# okay decompiling scripts/MaschineJam.pyc
+        super().disconnect()
+# okay decompiling src/MaschineJam.pyc

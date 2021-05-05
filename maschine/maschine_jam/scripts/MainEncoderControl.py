@@ -3,7 +3,7 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/MainEncoderControl.py
-# Compiled at: 2021-04-29 13:54:08
+# Compiled at: 2021-05-04 10:35:59
 # Size of source mod 2**32: 4891 bytes
 from .MidiMap import SEL_MODE_ARM, SEL_MODE_SOLO, CLIQ_DESCR, calc_new_parm
 ME_MASTER = 0
@@ -121,4 +121,4 @@ class MainEncoderControl:
     @property
     def mode(self):
         return self._MainEncoderControl__mode
-# okay decompiling scripts/MainEncoderControl.pyc
+# okay decompiling src/MainEncoderControl.pyc

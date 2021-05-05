@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/JamSceneComponent.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 459 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 436 bytes
 import _Framework.SceneComponent as SceneComponent
 from _Framework.Util import nop
 from .JamClipSlotComponent import JamClipSlotComponent
@@ -14,5 +14,5 @@ class JamSceneComponent(SceneComponent):
     clip_slot_component_type = JamClipSlotComponent
 
     def __init__(self, num_slots=0, tracks_to_use_callback=nop, *a, **k):
-        (super(JamSceneComponent, self).__init__)(num_slots, tracks_to_use_callback, *a, **k)
-# okay decompiling scripts/JamSceneComponent.pyc
+        (super().__init__)(num_slots, tracks_to_use_callback, *a, **k)
+# okay decompiling src/JamSceneComponent.pyc

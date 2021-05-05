@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/EncoderComponent.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 26004 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 26006 bytes
 Instruction context:
    
  L. 416       332  LOAD_FAST                'parmlist'
@@ -67,7 +67,7 @@ class EncoderComponent(MaschineMode):
     _EncoderComponent__selection_map = {}
 
     def __init__(self, session, *a, **k):
-        (super(EncoderComponent, self).__init__)(*a, **k)
+        (super().__init__)(*a, **k)
         self._EncoderComponent__session = session
         self._EncoderComponent__level_pan_mode_button = StateButton(True, MIDI_CC_TYPE, 0, 91, name='Level_Button')
         self._EncoderComponent__handle_level_button.subject = self._EncoderComponent__level_pan_mode_button
@@ -307,7 +307,7 @@ class EncoderComponent(MaschineMode):
         self._EncoderComponent__do_device_nav(vindexof(device_list, self._device), device_list, nav_dir)
 
     def __do_device_nav(self, index, device_list, nav_dir):
-        if index != None:
+        if index is not None:
             if len(device_list) > 1:
                 newvalue = min(max(0, index + nav_dir), len(device_list) - 1)
                 if newvalue != index:
@@ -319,7 +319,7 @@ class EncoderComponent(MaschineMode):
         chain_device = my_chain.canonical_parent
         chain_list = chain_device.chains
         index = vindexof(chain_list, my_chain)
-        if index != None:
+        if index is not None:
             if len(chain_list) > 0:
                 newvalue = min(max(0, index + nav_dir), len(chain_list) - 1)
                 if newvalue != index:
@@ -336,7 +336,7 @@ class EncoderComponent(MaschineMode):
             else:
                 device_list = self._track.devices
                 index = vindexof(device_list, self._device)
-                if index != None:
+                if index is not None:
                     newvalue = min(max(0, index + nav_dir), len(device_list) - 1)
                     if newvalue != index:
                         self.song().view.select_device(device_list[newvalue])
@@ -456,7 +456,7 @@ class EncoderComponent(MaschineMode):
 
  L. 401        80  LOAD_FAST                'mapping'
                82  LOAD_CONST               None
-               84  COMPARE_OP               !=
+               84  COMPARE_OP               is-not
             86_88  POP_JUMP_IF_FALSE   350  'to 350'
 
  L. 402        90  LOAD_GLOBAL              len
@@ -485,7 +485,7 @@ class EncoderComponent(MaschineMode):
 
  L. 405       126  LOAD_FAST                'bank_mapping'
               128  LOAD_CONST               None
-              130  COMPARE_OP               !=
+              130  COMPARE_OP               is-not
               132  POP_JUMP_IF_FALSE   122  'to 122'
               134  LOAD_FAST                'idx'
               136  LOAD_GLOBAL              len
@@ -497,7 +497,7 @@ class EncoderComponent(MaschineMode):
               148  LOAD_FAST                'idx'
               150  BINARY_SUBSCR    
               152  LOAD_CONST               None
-              154  COMPARE_OP               !=
+              154  COMPARE_OP               is-not
               156  POP_JUMP_IF_FALSE   122  'to 122'
 
  L. 406       158  LOAD_FAST                'bank_mapping'

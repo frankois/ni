@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/PadMode.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 11389 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 11278 bytes
 from .MidiMap import ND_KEYBOARD1, SCALES, toHSB, PAD_MODE, BASE_NOTE, NAV_SRC_ENCODER
 from .PadScale import *
 from .MaschineMode import MaschineMode
@@ -32,7 +32,7 @@ class PadMode(MaschineMode):
     _PadMode__layout = LAYOUT_ISO_4_INKEY
 
     def __init__(self, button_index, monochrome=False, *a, **k):
-        (super(PadMode, self).__init__)(button_index, *a, **k)
+        (super().__init__)(button_index, *a, **k)
         self._note_display_mode = ND_KEYBOARD1
         self._base_note = 0
         self._octave = 2
@@ -164,8 +164,8 @@ class PadMode(MaschineMode):
         if not track:
             return self
         drum_device = find_drum_device(track)
-        if drum_device != None:
-            if self._alternate_mode != None:
+        if drum_device is not None:
+            if self._alternate_mode is not None:
                 return self._alternate_mode
         return self
 
@@ -226,14 +226,12 @@ class PadMode(MaschineMode):
                                 if self._PadMode__layout == LAYOUT_ISO_4_CHROM:
                                     note_index = (7 - row) * 5 + column
                                 else:
-                                    scale_index = note_index % scale_len
-                                    octave_offset = note_index / scale_len
                                     if self._PadMode__layout == LAYOUT_ISO_3_CHROM or self._PadMode__layout == LAYOUT_ISO_4_CHROM:
                                         scale_index = note_index % 12
-                                        octave_offset = note_index / 12
+                                        octave_offset = note_index // 12
                                         note_value = SCALES[0].notevalues[scale_index] + self._base_note + octave * 12 + octave_offset * 12
                                 scale_index = note_index % scale_len
-                                octave_offset = note_index / scale_len
+                                octave_offset = note_index // scale_len
                                 note_value = self._scale.notevalues[scale_index] + self._base_note + octave * 12 + octave_offset * 12
                 if note_value < 128:
                     button.set_to_notemode(True)
@@ -306,4 +304,4 @@ class PadMode(MaschineMode):
             if button:
                 button.set_to_notemode(False)
                 button.remove_value_listener(self.handle_button)
-# okay decompiling scripts/PadMode.pyc
+# okay decompiling src/PadMode.pyc

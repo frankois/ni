@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/TrackControlComponent.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 6538 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 6484 bytes
 from _Framework.SubjectSlot import subject_slot
 import _Framework.CompoundComponent as CompoundComponent
 from _Framework.InputControlElement import MIDI_NOTE_TYPE
@@ -26,7 +26,7 @@ COLORLIST = [
 class TrackControlComponent(CompoundComponent):
 
     def __init__(self, session, track_editor, *a, **k):
-        (super(TrackControlComponent, self).__init__)(*a, **k)
+        (super().__init__)(*a, **k)
         self._bmatrix = IndexButtonMatrix(72, name='Track_Select_Button_Matrix')
         self._buttons = [self.create_buttons(index, track_editor) for index in range(8)]
         self._bmatrix.add_row(tuple([trackButtonHandler._button for trackButtonHandler in self._buttons]))
@@ -174,7 +174,7 @@ class TrackControlComponent(CompoundComponent):
                 self.song().create_midi_track(-1)
 
     def disconnect(self):
-        super(TrackControlComponent, self).disconnect()
+        super().disconnect()
         for button in self._buttons:
             button.disable()
-# okay decompiling scripts/TrackControlComponent.pyc
+# okay decompiling src/TrackControlComponent.pyc

@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/TouchStripSlider.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 3265 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 3120 bytes
 import _Framework.SliderElement as SliderElement
 from _Framework.InputControlElement import MIDI_NOTE_TYPE
 
@@ -13,7 +13,7 @@ class TouchStripSlider(SliderElement):
 
     def __init__(self, msg_type, channel, identifier, index, handler, *a, **k):
         assert msg_type is not MIDI_NOTE_TYPE
-        (super(TouchStripSlider, self).__init__)(msg_type, channel, identifier, *a, **k)
+        (super().__init__)(msg_type, channel, identifier, *a, **k)
         self._TouchStripSlider__grabbed = False
         self._TouchStripSlider__buffered_value = None
         self._TouchStripSlider__led_value = None
@@ -52,22 +52,22 @@ class TouchStripSlider(SliderElement):
         return self._TouchStripSlider__cfg
 
     def remove_value_listener(self, *a, **k):
-        (super(self.__class__, self).remove_value_listener)(*a, **k)
+        (super().remove_value_listener)(*a, **k)
         if self.is_grabbed:
             self.resource.release_all()
 
     def set_display_value(self, value, force=False, channel=None):
         self._TouchStripSlider__buffered_value = value
         if not self._TouchStripSlider__grabbed:
-            super(TouchStripSlider, self).send_value(value, force, channel)
+            super().send_value(value, force, channel)
 
     def send_value(self, value, force=False, channel=None):
-        super(TouchStripSlider, self).send_value(value, True, channel)
+        super().send_value(value, True, channel)
 
     def grab_control(self, client):
         self._TouchStripSlider__grabbed = True
         self._TouchStripSlider__sysexhandler.update_bar_config()
-        super(TouchStripSlider, self).send_value(0, True)
+        super().send_value(0, True)
 
     def release_control(self, client):
         self._TouchStripSlider__grabbed = False
@@ -83,7 +83,7 @@ class GrabEncoder(SliderElement):
 
     def __init__(self, msg_type, channel, identifier, *a, **k):
         assert msg_type is not MIDI_NOTE_TYPE
-        (super(GrabEncoder, self).__init__)(msg_type, channel, identifier, *a, **k)
+        (super().__init__)(msg_type, channel, identifier, *a, **k)
         self._GrabEncoder__grabbed = False
         self.resource.on_received = self.grab_control
         self.resource.on_lost = self.release_control
@@ -99,7 +99,7 @@ class GrabEncoder(SliderElement):
         self._GrabEncoder__grabbed = False
 
     def remove_value_listener(self, *a, **k):
-        (super(self.__class__, self).remove_value_listener)(*a, **k)
+        (super().remove_value_listener)(*a, **k)
         if self._GrabEncoder__grabbed:
             self.resource.release_all()
-# okay decompiling scripts/TouchStripSlider.pyc
+# okay decompiling src/TouchStripSlider.pyc

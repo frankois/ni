@@ -3,15 +3,15 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/MaschineMode.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 1369 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 1333 bytes
 import _Framework.CompoundComponent as CompoundComponent
 
 class MaschineMode(CompoundComponent):
     __module__ = __name__
 
     def __init__(self, *a, **k):
-        (super(MaschineMode, self).__init__)(*a, **k)
+        (super().__init__)(*a, **k)
         self._active = False
         self._alternate_mode = None
 
@@ -55,7 +55,7 @@ class MaschineMode(CompoundComponent):
         pass
 
     def disconnect(self):
-        super(MaschineMode, self).disconnect()
+        super().disconnect()
 
     def fitting_mode(self, track):
         return self
@@ -71,4 +71,4 @@ class MaschineMode(CompoundComponent):
 
     def update(self):
         pass
-# okay decompiling scripts/MaschineMode.pyc
+# okay decompiling src/MaschineMode.pyc

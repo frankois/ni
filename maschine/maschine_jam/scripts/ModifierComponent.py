@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/ModifierComponent.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 13931 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 13916 bytes
 import Live
 from _Framework.SubjectSlot import subject_slot
 from _Framework.InputControlElement import MIDI_CC_TYPE
@@ -33,7 +33,7 @@ class ModifierComponent(CompoundComponent):
     _ModifierComponent__quantize_setting = 5
 
     def __init__(self, session, *a, **k):
-        (super(ModifierComponent, self).__init__)(*a, **k)
+        (super().__init__)(*a, **k)
         self._ModifierComponent__session = session
         self._ModifierComponent__delete_button = StateButton(True, MIDI_CC_TYPE, 0, 95, name='Clear_Button')
         self._ModifierComponent__do_delete.subject = self._ModifierComponent__delete_button
@@ -133,7 +133,7 @@ class ModifierComponent(CompoundComponent):
         else:
             if value != 0:
                 clip = self.song().view.detail_clip
-                if clip != None:
+                if clip is not None:
                     clip.clear_all_envelopes()
                     self.canonical_parent.show_message('Clear Envelopes ' + clip.name)
         return
@@ -148,7 +148,7 @@ class ModifierComponent(CompoundComponent):
         else:
             if value != 0:
                 clip = self.song().view.detail_clip
-                if clip != None:
+                if clip is not None:
                     if clip.is_midi_clip:
                         if clip.length <= 128.0:
                             clip.duplicate_loop()
@@ -300,7 +300,7 @@ class ModifierComponent(CompoundComponent):
         song = self.song()
         clip_slot = clipslotcomp._clip_slot
         track = clip_slot.canonical_parent
-        if clip_slot.clip == None:
+        if clip_slot.clip is None:
             if track.has_midi_input:
                 try:
                     clip_slot.create_clip(4.0)
@@ -360,4 +360,4 @@ class ModifierComponent(CompoundComponent):
 
     def is_duplicate_down(self):
         return self._ModifierComponent__duplicate_down
-# okay decompiling scripts/ModifierComponent.pyc
+# okay decompiling src/ModifierComponent.pyc

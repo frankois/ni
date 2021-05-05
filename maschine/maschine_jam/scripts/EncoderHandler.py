@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/EncoderHandler.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 10104 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 10088 bytes
 from _Framework.SubjectSlot import subject_slot
 import _Framework.CompoundComponent as CompoundComponent
 N_PARM_RANGE = 200
@@ -23,7 +23,7 @@ class EncoderHandler(CompoundComponent):
     _use_metering = False
 
     def __init__(self, index, encoder, touchbutton, control, *a, **k):
-        (super(EncoderHandler, self).__init__)(*a, **k)
+        (super().__init__)(*a, **k)
         self._index = index
         self._touchbutton = touchbutton
         self._handle_touch.subject = touchbutton
@@ -221,7 +221,7 @@ class EncoderHandler(CompoundComponent):
         if self._encoder.is_grabbed:
             return
             if self._encoder_control.is_shift_down():
-                if self._last_touch_val != None:
+                if self._last_touch_val is not None:
                     diff = value - self._last_touch_val
                     if diff != 0:
                         self._parameter.value = self.change_parm(diff, self._parameter, self._is_quantized)
@@ -252,4 +252,4 @@ class EncoderHandler(CompoundComponent):
         parm_range = parm.max - parm.min
         self._parm_raster_value = min(N_PARM_RANGE, max(0, self._parm_raster_value + delta))
         return float(self._parm_raster_value) / float(N_PARM_RANGE) * parm_range + parm.min
-# okay decompiling scripts/EncoderHandler.pyc
+# okay decompiling src/EncoderHandler.pyc

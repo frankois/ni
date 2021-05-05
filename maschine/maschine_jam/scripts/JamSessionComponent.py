@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/JamSessionComponent.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 7972 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 7901 bytes
 from .MidiMap import STEP1, COLOR_BLACK, COLOR_WHITE, COLOR_WHITE_DIM, toHSB
 import _Framework.SessionComponent as SessionComponent
 from .JamSceneComponent import JamSceneComponent
@@ -22,14 +22,14 @@ class JamSessionComponent(SessionComponent):
     _JamSessionComponent__color_mode = COLOR_MODE_STD
 
     def __init__(self, *a, **k):
-        (super(JamSessionComponent, self).__init__)(8, 8, *a, **k)
+        (super().__init__)(8, 8, *a, **k)
         self._JamSessionComponent__to_std_cmode()
 
     def _allow_updates(self):
         return True
 
     def set_color_mode(self, mode=None):
-        if mode == None:
+        if mode is None:
             if self._JamSessionComponent__color_mode == COLOR_MODE_STD:
                 self._JamSessionComponent__to_white_cmode()
             else:
@@ -69,7 +69,7 @@ class JamSessionComponent(SessionComponent):
         if self._JamSessionComponent__matrix:
             self._JamSessionComponent__matrix.prepare_update()
         prevoffset = self._track_offset
-        super(JamSessionComponent, self).set_offsets(track_offset, scene_offset)
+        super().set_offsets(track_offset, scene_offset)
         if prevoffset != self._track_offset:
             if self._track_offset_listener:
                 self._track_offset_listener(self._track_offset)
@@ -88,7 +88,7 @@ class JamSessionComponent(SessionComponent):
         self._track_offset_listener = listener
 
     def __color_cmode(self, clip_slot):
-        if clip_slot == None:
+        if clip_slot is None:
             return COLOR_BLACK
         oncolor, offcolor = self.get_color_cmode_base(clip_slot)
         if clip_slot.has_clip and not clip_slot.clip.is_recording:
@@ -110,7 +110,7 @@ class JamSessionComponent(SessionComponent):
         return COLOR_BLACK
 
     def __color_wht_mode(self, clip_slot):
-        if clip_slot == None:
+        if clip_slot is None:
             return COLOR_BLACK
         oncolor, _ = self.get_color_cmode_base(clip_slot)
         if clip_slot.has_clip and not clip_slot.clip.is_recording:
@@ -190,7 +190,7 @@ class JamSessionComponent(SessionComponent):
                         button.send_color_direct(COLOR_WHITE_DIM)
 
     def get_color_cmode_base(self, clip_slot):
-        if clip_slot != None:
+        if clip_slot is not None:
             if clip_slot.has_clip:
                 color = toHSB(clip_slot.clip.color)
                 return color
@@ -199,5 +199,5 @@ class JamSessionComponent(SessionComponent):
         return (0, 0)
 
     def disconnect(self):
-        super(JamSessionComponent, self).disconnect()
-# okay decompiling scripts/JamSessionComponent.pyc
+        super().disconnect()
+# okay decompiling src/JamSessionComponent.pyc

@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/SessionMode.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 2595 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 2578 bytes
 from .MidiMap import CLIP_MODE, NAV_SRC_BUTTON
 from .MaschineMode import MaschineMode
 
@@ -12,7 +12,7 @@ class SessionMode(MaschineMode):
     __module__ = __name__
 
     def __init__(self, button_index, *a, **k):
-        (super(SessionMode, self).__init__)(button_index, *a, **k)
+        (super().__init__)(button_index, *a, **k)
 
     def ext_name(self):
         return 'session_mode'
@@ -78,4 +78,4 @@ class SessionMode(MaschineMode):
         self._active = False
         self.canonical_parent.deassign_matrix()
         self.canonical_parent.get_session().set_clip_launch_buttons(None)
-# okay decompiling scripts/SessionMode.pyc
+# okay decompiling src/SessionMode.pyc

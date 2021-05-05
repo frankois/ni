@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/DrumStepMode.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 24043 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 24007 bytes
 import Live
 from _Framework.SubjectSlot import subject_slot
 from _Framework.InputControlElement import MIDI_NOTE_ON_STATUS, MIDI_NOTE_OFF_STATUS
@@ -128,7 +128,7 @@ class DrumStepMode(MaschineMode):
     _page_handler = None
 
     def __init__(self, button_index, monochrome=False, *a, **k):
-        (super(DrumStepMode, self).__init__)(button_index, *a, **k)
+        (super().__init__)(button_index, *a, **k)
         self.track = None
         self.device = None
         self._is_monochrome = monochrome
@@ -637,5 +637,5 @@ class DrumStepMode(MaschineMode):
         self._visible_drum_pads = None
         self._pads = None
         self._selected_pad = None
-        super(MaschineMode, self).disconnect()
-# okay decompiling scripts/DrumStepMode.pyc
+        super().disconnect()
+# okay decompiling src/DrumStepMode.pyc

@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/DrumMode.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 11371 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 11343 bytes
 from .MaschineMode import MaschineMode
 from .MidiMap import AUTO_NAME, DEFAULT_DRUM_COLOR, PAD_TRANSLATIONS, PAD_MODE, COLOR_BLACK, find_drum_device
 from _Framework.InputControlElement import MIDI_NOTE_ON_STATUS, MIDI_NOTE_OFF_STATUS
@@ -92,7 +92,7 @@ class DrumMode(MaschineMode):
     _DrumMode__modifier_component = None
 
     def __init__(self, button_index, monochrome=False, *a, **k):
-        (super(DrumMode, self).__init__)(button_index, *a, **k)
+        (super().__init__)(button_index, *a, **k)
         self.track = None
         self.device = None
         self._is_monochrome = monochrome
@@ -305,8 +305,8 @@ class DrumMode(MaschineMode):
         if not track:
             return self
         drum_device = find_drum_device(track)
-        if drum_device == None:
-            if self._alternate_mode != None:
+        if drum_device is None:
+            if self._alternate_mode is not None:
                 return self._alternate_mode
         return self
 
@@ -336,5 +336,5 @@ class DrumMode(MaschineMode):
         self._visible_drum_pads = None
         self._pads = None
         self._selected_pad = None
-        super(MaschineMode, self).disconnect()
-# okay decompiling scripts/DrumMode.pyc
+        super().disconnect()
+# okay decompiling src/DrumMode.pyc

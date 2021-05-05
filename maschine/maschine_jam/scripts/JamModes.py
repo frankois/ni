@@ -3,8 +3,8 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/JamModes.py
-# Compiled at: 2021-04-29 13:54:08
-# Size of source mod 2**32: 24974 bytes
+# Compiled at: 2021-05-04 12:11:01
+# Size of source mod 2**32: 24964 bytes
 Instruction context:
    
  L.  33         6  UNPACK_SEQUENCE_2     2 

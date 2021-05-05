@@ -3,7 +3,7 @@
 # Decompiled from: Python 3.6.2 (default, Apr 30 2021, 11:26:30) 
 # [GCC Apple LLVM 12.0.0 (clang-1200.0.31.1)]
 # Embedded file name: /Applications/Ableton Live 11 Suite.app/Contents/App-Resources/MIDI Remote Scripts/Maschine_JAM/PadColorButton.py
-# Compiled at: 2021-04-29 13:54:08
+# Compiled at: 2021-05-04 12:11:01
 # Size of source mod 2**32: 7147 bytes
 import _Framework.ButtonElement as ButtonElement
 from _Framework.InputControlElement import InputControlElement, MIDI_NOTE_TYPE, MIDI_NOTE_ON_STATUS
@@ -143,7 +143,7 @@ class IndexedButton(ButtonElement):
             self.send_midi((self._IndexedButton__note_on_code, self._original_identifier, color))
 
     def send_index(self, index):
-        if self._color_list == None:
+        if self._color_list is None:
             self._last_color = COLOR_BLACK
             self._IndexedButton__send_midi(COLOR_BLACK)
         else:
@@ -210,4 +210,4 @@ class IndexedButton(ButtonElement):
 
     def disconnect(self):
         InputControlElement.disconnect(self)
-# okay decompiling scripts/PadColorButton.pyc
+# okay decompiling src/PadColorButton.pyc
